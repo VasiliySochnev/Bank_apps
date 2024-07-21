@@ -8,7 +8,7 @@ data_file_patch = os.path.join(DATA_DIR, "operations.xls")
 
 
 def get_transaction_from_xlsx_file(path: str) -> pd.DataFrame:
-    """функция извлекает транзакции из файла xlsx"""
+    """Функция, которая извлекает транзакции из файла xlsx"""
     try:
         df = pd.read_excel(path)
     except FileNotFoundError:
