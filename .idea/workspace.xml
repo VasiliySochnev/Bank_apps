@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df4b3579-0e22-4e26-977b-18203cafa675" name="Changes" comment="bank_app">
+    <list default="true" id="df4b3579-0e22-4e26-977b-18203cafa675" name="Changes" comment="add views.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +39,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "develop"
+    "git-widget-placeholder": "develop",
+    "last_opened_file_path": "D:/all/Skypro/pycharm project/Lesson 9.1 Poetry/Lesson 9.1 Poetry"
   }
 }]]></component>
   <component name="SharedIndexes">
@@ -123,7 +123,63 @@
       <option name="project" value="LOCAL" />
       <updated>1721523139419</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add data operations.xlsx">
+      <option name="closed" value="true" />
+      <created>1721526607932</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1721526607932</updated>
+    </task>
+    <task id="LOCAL-00010" summary="add config.py (ways)">
+      <option name="closed" value="true" />
+      <created>1721526808049</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1721526808049</updated>
+    </task>
+    <task id="LOCAL-00011" summary="add data_conn.py (функция, которая извлекает транзакции из файла xlsx)">
+      <option name="closed" value="true" />
+      <created>1721527102957</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1721527102957</updated>
+    </task>
+    <task id="LOCAL-00012" summary="add user_settings.json">
+      <option name="closed" value="true" />
+      <created>1721527369207</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1721527369207</updated>
+    </task>
+    <task id="LOCAL-00013" summary="add external_api.py">
+      <option name="closed" value="true" />
+      <created>1721527659486</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1721527659486</updated>
+    </task>
+    <task id="LOCAL-00014" summary="add utils.py">
+      <option name="closed" value="true" />
+      <created>1721528003371</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1721528003371</updated>
+    </task>
+    <task id="LOCAL-00015" summary="add views.py">
+      <option name="closed" value="true" />
+      <created>1721528399260</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1721528399260</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -139,6 +195,13 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="bank_app" />
-    <option name="LAST_COMMIT_MESSAGE" value="bank_app" />
+    <MESSAGE value="add data operations.xlsx" />
+    <MESSAGE value="add config.py (ways)" />
+    <MESSAGE value="add data_conn.py (функция, которая извлекает транзакции из файла xlsx)" />
+    <MESSAGE value="add user_settings.json" />
+    <MESSAGE value="add external_api.py" />
+    <MESSAGE value="add utils.py" />
+    <MESSAGE value="add views.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="add views.py" />
   </component>
 </project>
