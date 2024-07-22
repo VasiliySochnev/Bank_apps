@@ -1,12 +1,9 @@
 import os
 
-import pandas as pd
+import pandas as pd  # type: ignore
 
 from config import TEST_DIR
 from src.utils import get_data_group_by_card, get_response, get_top_transact, select_data
-
-# import pytest
-
 
 test_date1 = "2021-12-31 00:00:01"
 test_df = pd.read_excel(os.path.join(TEST_DIR, "test_df.xlsx"))
@@ -14,20 +11,20 @@ test_df["datetime_col"] = pd.to_datetime(test_df["Дата операции"], d
 
 
 def test_get_response():
-    """тест приветствия"""
+    """Тест приветствия."""
     date = "2024-06-01 00:00:01"
     result = get_response(date)
     assert result == "Доброй ночи"
 
 
 def test_select_data():
-    """тест выборка по дате"""
+    """Тест выборка по дате."""
     result = select_data(test_df, test_date1)
     assert len(result) == 5
 
 
 def test_get_data_group_by_card():
-    """группировка по картам"""
+    """Группировка по картам."""
     result = get_data_group_by_card(test_df)
     assert result == [
         {"cashback": 214.11, "last_digits": "*4556", "total_spent": 21411.4},

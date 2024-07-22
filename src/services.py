@@ -1,6 +1,5 @@
 import logging
 import os
-# import re
 from typing import Any
 
 import pandas as pd  # type: ignore
@@ -16,11 +15,9 @@ logger.setLevel(logging.DEBUG)
 
 
 def get_transfer_people(transactions: pd.DataFrame) -> Any:
-    """Функция возвращает JSON со всеми транзакциями, которые относятся к переводам физлицам."""
+    """Функция, которая возвращает файл - JSON со всеми транзакциями, которые относятся к переводам физлицам."""
     logger.info("Получаем датафрейм")
     filtered_dtf = transactions[(transactions["Категория"] == "Переводы")]
-    # pattern = re.compile(r"[А-Я]{1}[а-я]{2,} [А-Я]{1}\.$")
-    # filtered_dtf = filtered_dtf[filtered_dtf["Описание"].str.contains(pattern)]
     filtered_dtf = filtered_dtf[filtered_dtf["Описание"].str.contains(r"[А-Я]{1}[а-я]{2,} [А-Я]{1}\.$", regex=True)]
     logger.debug(len(filtered_dtf))
     json_df = filtered_dtf.to_json(orient="records", indent=4, force_ascii=False)

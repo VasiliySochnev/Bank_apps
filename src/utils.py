@@ -3,7 +3,7 @@ import os
 from datetime import datetime
 from typing import Any, Dict
 
-import pandas as pd
+import pandas as pd  # type: ignore
 from dotenv import load_dotenv
 
 from config import LOGS_DIR
@@ -22,20 +22,20 @@ logger.setLevel(logging.DEBUG)
 
 
 def get_greeting(time: datetime) -> str:
-    """Возвращает приветствие в зависимости от времени дня"""
+    """Функция, которая возвращает приветствие в зависимости от времени дня."""
     hour = time.hour
     if 6 <= hour < 12:
-        return "Доброе утро"
+        return "Доброе утро."
     elif 12 <= hour < 18:
-        return "Добрый день"
+        return "Добрый день."
     elif 18 <= hour < 22:
-        return "Добрый вечер"
+        return "Добрый вечер."
     else:
-        return "Доброй ночи"
+        return "Доброй ночи."
 
 
 def get_response(date_time_str: str) -> str:
-    """Главная функция, которая передает указаннаю дату и возвращает привествие"""
+    """Главная функция, которая передает указаннаю дату и возвращает привествие."""
     logger.info(date_time_str)
     greeting = get_greeting(datetime.strptime(date_time_str, "%Y-%m-%d %H:%M:%S"))
     logger.info(greeting)
@@ -43,7 +43,7 @@ def get_response(date_time_str: str) -> str:
 
 
 def select_data(transactions: pd.DataFrame, date: str) -> pd.DataFrame:
-    """Функция отбирает датафрейм за месяц"""
+    """Функция, которая отбирает датафрейм за месяц."""
 
     end_date = datetime.strptime(date, "%Y-%m-%d %H:%M:%S")
     start_date = end_date
@@ -59,7 +59,7 @@ def select_data(transactions: pd.DataFrame, date: str) -> pd.DataFrame:
 
 
 def get_data_group_by_card(transactions: pd.DataFrame) -> list[Dict] | Any:
-    """функция принимает датафрейм и группирует операции по картам"""
+    """Функция, которая принимает датафрейм и группирует операции по картам."""
     pay_operation = transactions[(transactions["Номер карты"].notna()) & (transactions["Сумма операции"] < 0.0)]
     response = []
 
@@ -82,7 +82,6 @@ def get_data_group_by_card(transactions: pd.DataFrame) -> list[Dict] | Any:
     logger.debug(response)
 
     return response
-    # return df_list
 
 
 def get_top_transact(transaction: pd.DataFrame) -> list[Dict]:
@@ -101,11 +100,3 @@ def get_top_transact(transaction: pd.DataFrame) -> list[Dict]:
         )
     logger.debug(result)
     return result
-
-
-# from config import TEST_DIR
-#
-# test_date1 = "31-12-2021 00:00:01"
-# test_df = pd.read_excel(os.path.join(TEST_DIR, "test_df.xlsx"))
-# test_df["datetime_col"] = pd.to_datetime(test_df["Дата операции"], dayfirst=True)
-# get_top_transact(test_df)

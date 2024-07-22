@@ -3,7 +3,7 @@ import os
 from datetime import datetime, timedelta
 from typing import Any
 
-import pandas as pd
+import pandas as pd  # type: ignore
 
 from config import DATA_DIR, LOGS_DIR
 
@@ -40,23 +40,18 @@ def file_save_decorators(func: Any) -> Any:
 @write_to_file_params(file_name="function_report.txt")
 @file_save_decorators
 def spending_by_category(transactions: pd.DataFrame, category: str, date: str = "") -> pd.DataFrame:
-    """Функция возвращает траты по заданной категории за последние три месяца (от переданной даты)"""
+    """Функция, которая возвращает траты по заданной категории за последние три месяца (от переданной даты)."""
 
-    # cat_list: list = []
     if date == "":
         end_date = datetime.today()
         end_date = end_date.replace(microsecond=0)
-        # end_day = end_date.day
         start_date = end_date - timedelta(days=90)
-        # start_date = start_date.replace(day=end_day)
         logger.info(end_date)
         logger.info(start_date)
     else:
 
         end_date = datetime.strptime(date, "%Y-%m-%d")
-        # end_day = end_date.day
         start_date = end_date - timedelta(days=90)
-        # start_date = start_date.replace(day=end_day, microsecond=0)
         logger.info(end_date)
         logger.info(start_date)
 
@@ -71,6 +66,4 @@ def spending_by_category(transactions: pd.DataFrame, category: str, date: str = 
         result_df = pd.DataFrame()
     logger.info(len(result_df))
     logger.debug(result_df)
-    # logger.debug(result_df.to_dict('index'))
-    # result_df.to_csv(os.path.join(DATA_DIR, "cat_from_3m.csv"), encoding='utf-8')
     return result_df

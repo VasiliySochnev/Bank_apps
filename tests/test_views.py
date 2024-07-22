@@ -26,8 +26,8 @@ def test_get_response():  # type: ignore
 @patch("src.views.get_top_transact")
 @patch("src.views.get_data_group_by_card")
 @patch("src.views.get_response")
-def test_get_views_data(
-    mock_response, mock_stosk_price, mock_data_currencies, mock_get_top_transact, mock_get_data_group_by_card
+def test_get_views_data(  # type: ignore
+        mock_response, mock_stosk_price, mock_data_currencies, mock_get_top_transact, mock_get_data_group_by_card
 ):
     mock_response.return_value = "sdfsdfs"
     mock_get_data_group_by_card.return_value = [
