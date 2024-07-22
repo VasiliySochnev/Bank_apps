@@ -10,7 +10,7 @@ with open(os.path.join(TEST_DIR, "user_settings_test.json"), "r") as f:
 
 
 @patch("src.external_api.requests.get")
-def test_getting_data_stock_prices_invalid(mocked_get):
+def test_getting_data_stock_prices_invalid(mocked_get):  # type: ignore
     """Ошибка запроса к API."""
     mocked_get.return_value.status_code = 400
     result = getting_data_currencies(data_json)

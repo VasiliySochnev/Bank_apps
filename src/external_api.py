@@ -61,7 +61,7 @@ def getting_data_stock_prices(stocks: dict) -> Union[list[dict] | dict]:
         logger.info(response_json)
 
         logger.info("Полученные данные преобразовываем в заданный словарь")
-        result.append({"stock": response_json["stock"], "price": response_json.get("data").get("c")})
+        result.append({"stock": response_json["stock"], "price": response_json.get("data").get("c")})  # type: ignore
 
     logger.info("Выводим результат по акциям")
     logger.debug(result)

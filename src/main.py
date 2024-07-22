@@ -1,8 +1,9 @@
+from datetime import datetime
+
 from src.data_conn import get_dataframe
 from src.reports import spending_by_category
 from src.services import get_transfer_people
 from src.views import get_views_data
-from datetime import datetime
 
 
 def main() -> None:

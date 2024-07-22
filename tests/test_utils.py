@@ -10,20 +10,20 @@ test_df = pd.read_excel(os.path.join(TEST_DIR, "test_df.xlsx"))
 test_df["datetime_col"] = pd.to_datetime(test_df["Дата операции"], dayfirst=True)
 
 
-def test_get_response():
+def test_get_response():  # type: ignore
     """Тест приветствия."""
     date = "2024-06-01 00:00:01"
     result = get_response(date)
     assert result == "Доброй ночи"
 
 
-def test_select_data():
+def test_select_data():  # type: ignore
     """Тест выборка по дате."""
     result = select_data(test_df, test_date1)
     assert len(result) == 5
 
 
-def test_get_data_group_by_card():
+def test_get_data_group_by_card():  # type: ignore
     """Группировка по картам."""
     result = get_data_group_by_card(test_df)
     assert result == [
@@ -33,7 +33,7 @@ def test_get_data_group_by_card():
     ]
 
 
-def test_get_top_transact():
+def test_get_top_transact():  # type: ignore
     result = get_top_transact(test_df)
     assert result == [
         {"date": "2021-12-30", "amount": -20000.0, "category": "Переводы", "description": "Константин Л."},

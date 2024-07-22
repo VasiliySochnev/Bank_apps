@@ -8,7 +8,6 @@ from src.data_conn import get_dataframe
 from src.external_api import getting_data_currencies, getting_data_stock_prices
 from src.utils import get_data_group_by_card, get_response, get_top_transact, select_data
 
-
 logger = logging.getLogger("views")
 logger_file_handler = logging.FileHandler(os.path.join(config.LOGS_DIR, "views.log"), encoding="utf8", mode="a")
 logger_formatter = logging.Formatter("%(asctime)s - %(levelname)s - FUNC(%(funcName)s): %(message)s")

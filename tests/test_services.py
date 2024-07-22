@@ -20,7 +20,7 @@ def transactions_data_test():  # type: ignore
     return pd.DataFrame(dict1)
 
 
-def test_get_transfer_people2():
+def test_get_transfer_people2():  # type: ignore
     result = get_transfer_people(transactions_data_test())
 
     assert result == (
