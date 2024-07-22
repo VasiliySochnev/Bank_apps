@@ -2,7 +2,7 @@ import json
 import os
 from unittest.mock import patch
 
-import pandas as pd
+import pandas as pd  # type: ignore
 
 import src.utils
 import src.views
@@ -14,7 +14,7 @@ test_df["datetime_col"] = pd.to_datetime(test_df["Дата операции"], d
 date = "2021-12-31 16:44:00"
 
 
-def test_get_response():
+def test_get_response():  # type: ignore
     with patch("src.views.get_response") as call_fun_get_response:
         call_fun_get_response.return_value = "Ghbdtn"
         res = src.views.get_response("2021-12-31 00:44:00")
