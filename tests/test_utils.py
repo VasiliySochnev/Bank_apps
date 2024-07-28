@@ -14,7 +14,7 @@ def test_get_response():  # type: ignore
     """Тест приветствия."""
     date = "2024-06-01 00:00:01"
     result = get_response(date)
-    assert result == "Доброй ночи"
+    assert result == "Доброй ночи."
 
 
 def test_select_data():  # type: ignore

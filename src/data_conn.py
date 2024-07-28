@@ -4,7 +4,7 @@ import pandas as pd  # type: ignore
 
 from config import DATA_DIR
 
-data_file_patch = os.path.join(DATA_DIR, "operations.xls")
+data_file_patch = os.path.join(DATA_DIR, "operations.xlsx")
 
 
 def get_transaction_from_xlsx_file(path: str) -> pd.DataFrame:
