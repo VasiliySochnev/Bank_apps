@@ -16,6 +16,9 @@ logger.setLevel(logging.DEBUG)
 
 
 def write_to_file_params(file_name: str) -> Any:
+    """Эта функция создает и возвращает декоратор, который записывает
+    результат выполнения декорируемой функции в файл."""
+
     def decorator(func: Any) -> Any:
         def wrapper(*args: Any, **kwargs: Any) -> Any:
             result = func(*args, **kwargs)
@@ -29,6 +32,9 @@ def write_to_file_params(file_name: str) -> Any:
 
 
 def file_save_decorators(func: Any) -> Any:
+    """Это декоратор, который обворачивает другую функцию и
+    результат этой функции сохраняет в файл CSV."""
+
     def wrapper(*args: Any, **kwargs: Any) -> Any:
         result = func(*args, **kwargs)
         result.to_csv(os.path.join(DATA_DIR, "cat_from_3m.csv"), encoding="utf-8")

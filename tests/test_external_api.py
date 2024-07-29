@@ -18,7 +18,7 @@ def test_getting_data_stock_prices_invalid(mocked_get):  # type: ignore
 
 
 @patch("src.external_api.requests.get")
-def test_currency_conversion(mocked_get):
+def test_currency_conversion(mocked_get):  # type: ignore
     mocked_get.return_value.status_code = 200
     mocked_get.return_value.json.return_value = {"data": {"USDRUB": "64.1824"}}
     result = getting_data_currencies(data_json)
@@ -26,7 +26,7 @@ def test_currency_conversion(mocked_get):
 
 
 @patch("src.external_api.requests.get")
-def test_getting_data_stock_prices(mocked_get):
+def test_getting_data_stock_prices(mocked_get):  # type: ignore
     mocked_get.return_value.status_code = 200
     mocked_get.return_value.json.return_value = {
         "stock": "AAPL",

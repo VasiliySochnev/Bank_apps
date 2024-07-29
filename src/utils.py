@@ -85,6 +85,8 @@ def get_data_group_by_card(transactions: pd.DataFrame) -> list[Dict] | Any:
 
 
 def get_top_transact(transaction: pd.DataFrame) -> list[Dict]:
+    """Функция, которая выполняет сортировку и отбор транзакций из датафрейма,
+    а затем преобразует эти транзакции в список словарей с определенными ключами."""
     result = []
     df = transaction.sort_values(["Сумма операции"], ascending=True)
     top_transactions = df[:5].to_dict("records")
