@@ -3,7 +3,6 @@ import pandas as pd  # type: ignore
 from src.services import get_transfer_people
 
 
-# @pytest.fixture
 def transactions_data_test():  # type: ignore
     dict1 = [
         {
